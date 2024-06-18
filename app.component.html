@@ -1,0 +1,32 @@
+<div *ngIf="isLoggedIn==0">
+  Username:<input type="text"[(ngModel)]="username"><br>
+  password:<input type="password"[(ngModel)]="password"><br>
+  <button (click)="login()">Login</button>
+</div>
+
+<div *ngIf="isLoggedIn==1">
+  <button (click)="logout()">Logout</button>
+
+
+<table border="1">
+  <tr>
+    <td>SN</td>
+    <td>Employee Name</td>
+    <td>Email id</td>
+    <td>Action</td>
+  </tr>
+  <tr *ngFor="let employee of employees">
+    <td>{{employee.id}}</td>
+    <td>{{employee.empname}}</td>
+    <td>{{employee.emailid}}</td>
+    <td>
+      <button (click)="delete(employee)">Delete Employee</button>
+    </td>
+  </tr>
+</table>
+<br><br>
+
+Employee Name: <input type="text" [(ngModel)]="empname"><br>
+Email id: <input type="text" [(ngModel)]="emailid"><br>
+<button (click)="add()">Add Employee</button>
+</div>
